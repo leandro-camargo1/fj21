@@ -18,6 +18,7 @@ import br.com.caelum.agenda.modelo.Contato;
 
 @WebServlet("/adicionaContato")
 public class AdicionaContatoServlet extends HttpServlet{
+
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 	throws IOException, ServletException {
 		//buscaWriter
@@ -53,6 +54,8 @@ public class AdicionaContatoServlet extends HttpServlet{
 		out.println("Contato " + contato.getNome() + " adicionado com sucesso.");
 		out.println("</body>");
 		out.println("</html>");
+		
+		
 		
 	}
 }
