@@ -9,7 +9,6 @@
 </head>
 <body>
 	<c:import url="cabecalho.jsp" />
-	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao" />
 	<table>
 		<tr>
 			<th>Nome</th>
@@ -18,7 +17,7 @@
 			<th>Data de Nascimento</th>
 		</tr>
 		<!-- percorre contatos montando as linhas da tabela -->
-		<c:forEach var="contato" items="${dao.lista}" varStatus="id">
+		<c:forEach var="contato" items="${contatos}">
 		
 	<tr bgcolor="#${id.count % 2 == 0 ? '#d9ff66' : '#b3b3b3'}">
 		<td>${contato.nome}</td>
@@ -36,6 +35,8 @@
 		<td>
 		<fmt:formatDate value="${contato.dataNascimento.time}" pattern="dd/MM/yyyy" />
 		</td>
+		<td>
+		<a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a>
 	</tr>
 		</c:forEach>	
 	</table>
