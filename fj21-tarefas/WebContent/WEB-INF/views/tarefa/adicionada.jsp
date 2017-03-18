@@ -8,5 +8,6 @@
 </head>
 <body>
 	Nova tarefa adicionada com sucesso!
+	<a href="listaTarefas">Verifique as tarefas já inseridas</a>
 </body>
 </html>

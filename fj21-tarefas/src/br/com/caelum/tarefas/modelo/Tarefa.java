@@ -5,12 +5,14 @@ import java.util.Calendar;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class Tarefa {
 	private Long id;
 	@NotEmpty @Size(min=5, message="O tamanho deve ser maior que 5 caracteres")
 	private String descricao;
 	private boolean finalizado;
+	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Calendar dataFinalizacao;
 
 	public Long getId() {
